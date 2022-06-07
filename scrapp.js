@@ -24,15 +24,18 @@ async function init() {
       let links_model = {
         titulo: "",
         enlace: "",
-        categorias: "",
+        autor: "",
+        categoria: "",
+        resumen: "",
       };
 
       //si no es undefined, recupera el valor
       if ($(el).find("a").attr("href"))
         links_model.enlace = $(el).find("a").attr("href");
         links_model.titulo = $(el).find("a").text();
-        //links_model.categorias = $(el).find("p").text();
-
+        links_model.autor = $(el).find("ul.documentInfo").text();
+        links_model.categoria = $(el).find("p.discipline").text();
+        links_model.resumen = $(el).find("div.abstract").text();
       /**
      
       AGREGAR "https://www.investigacionyciencia.es/" en cadena porque solo recupera el /news/noticia  
