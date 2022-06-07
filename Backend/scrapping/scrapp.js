@@ -1,3 +1,5 @@
+//Modelo noticias
+
 //traer dependencia cheerio
 const cheerio = require("cheerio");
 //traer dependencia de request-promise
