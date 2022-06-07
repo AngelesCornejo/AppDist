@@ -24,11 +24,14 @@ async function init() {
       let links_model = {
         titulo: "",
         enlace: "",
+        categorias: "",
       };
 
       //si no es undefined, recupera el valor
       if ($(el).find("a").attr("href"))
         links_model.enlace = $(el).find("a").attr("href");
+        links_model.titulo = $(el).find("a").text();
+        //links_model.categorias = $(el).find("p").text();
 
       /**
      
@@ -37,7 +40,10 @@ async function init() {
     */
       const link = $(el).attr("href");
 
-      if (links_model.enlace != "") news_links.links.push(links_model);
+      if (links_model.enlace != "") {
+        links_model.enlace = "https://www.investigacionyciencia.es"+links_model.enlace;
+        news_links.links.push(links_model);
+      }
     });
   console.log(news_links);
 }
